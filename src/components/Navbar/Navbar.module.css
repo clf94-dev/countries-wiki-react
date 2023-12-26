@@ -1,0 +1,24 @@
+
+.navContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    border-bottom: 1px solid gray;
+}
+
+.darkModeBtn{
+    height: 45px;
+    border: 1px solid hsl(200, 15%, 8%);
+    border-radius: 10px;
+    background-color: transparent;
+    color: hsl(200, 15%, 8%);
+    padding: 0 20px;
+}
+.darkModeBtn:hover{
+    cursor: pointer;
+    color: white;
+    background-color: hsl(200, 15%, 8%);
+}
