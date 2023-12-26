@@ -41,14 +41,19 @@ function Filters() {
           padding: "6px",
           border: "none",
           boxShadow: "none",
+          boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
         }),
         singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#000" }),
       };
     return (
        <div className={darkModeOn ? `${styles.filters} ${styles.dark}` : styles.filters}>
-            <input type="text" placeholder='Search for a country' className={styles.searchBar}  />
-           <Select placeholder="Select currency" styles={darkModeOn ? customStyles : customStylesLight} options={options} />
-           <Select placeholder="Select region" styles={darkModeOn ? customStyles : customStylesLight} options={options} />
+            <div className={darkModeOn ? `${styles.inputComponent} ${styles.dark}` : styles.inputComponent}>
+                <ion-icon name='search' size="small" className={styles.searchIcon}></ion-icon>
+                <input type="text" placeholder='Search for a country' className={styles.searchBar}  />
+            </div>
+            
+            <Select placeholder="Select currency" styles={darkModeOn ? customStyles : customStylesLight} options={options} />
+            <Select placeholder="Select region" styles={darkModeOn ? customStyles : customStylesLight} options={options} />
     
        </div>
     )
