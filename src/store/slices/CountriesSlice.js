@@ -1,3 +1,7 @@
+import {
+    getCountriesList
+} from '../../services/countries'
+
 const DARK_MODE_NAME = 'dark_mode_flag';
 const getInitialDarkMode = () => {
     const darkModeFlag = localStorage.getItem(DARK_MODE_NAME) || false;
@@ -19,5 +23,9 @@ export const countriesSlice = (set) => ({
             darkModeOn: false
         }
     }),
-    fetchCountriesData: () => set((state) => ({countriesList: 'Spain'}))
+    fetchCountriesData: async () => {
+        const  listData = await getCountriesList()
+        console.log({listData})
+        set((state) => ({countriesList: listData.data}))
+    }
 })
