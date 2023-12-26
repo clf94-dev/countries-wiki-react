@@ -1,6 +1,8 @@
 function Country () {
     return (
-        <div>Country page</div>
+        <div style={{display: 'flex', justifyContent:'center'}}>
+            Country page
+        </div>
     )
 }
 export default Country

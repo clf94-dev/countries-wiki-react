@@ -1,7 +1,7 @@
 
 function Home() {
     return(
-        <div>Home page</div>
+        <div style={{display: 'flex', justifyContent:'center'}}>Home page</div>
     )
 }
 
