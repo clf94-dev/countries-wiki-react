@@ -8,6 +8,10 @@
     padding: 0px 50px;
     border-bottom: 1px solid gray;
 }
+.darkContainer{
+    background-color: black;
+    color: white;
+}
 
 .darkModeBtn{
     height: 45px;
@@ -21,10 +25,20 @@
     color: hsl(200, 15%, 8%);
     padding: 0 20px;
 }
+.active {
+    color: white;
+    border: 1px solid white;
+}
 .darkModeBtn:hover{
     cursor: pointer;
     color: white;
     background-color: hsl(200, 15%, 8%);
+}
+
+.darkModeBtn.active:hover{
+    cursor: pointer;
+    color: black;
+    background-color:white;
 }
 
 

@@ -3,3 +3,6 @@
     flex-direction: row;
     width: 100%;
 }
+.darkListContainer{
+    background-color: black;
+}
