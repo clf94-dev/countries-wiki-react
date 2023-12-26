@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Card.module.css'
 
-function Card(props) {
-    const { data } = props;
-    console.log({props})
+function Card({ data }) {
     const [showCountryName, setShowCountryName] = useState(false)
     return (
     <div 
