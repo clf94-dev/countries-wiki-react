@@ -12,7 +12,7 @@ function Navbar(){
         if (darkModeOn) deactivateDarkMode()
         else activateDarkMode()
     }
-    console.log(darkModeOn)
+    console.log({darkModeOn})
     return (
         <div className={darkModeOn ? `${styles.navContainer} ${styles.darkContainer}`: styles.navContainer}>
             <div className={styles.title}>

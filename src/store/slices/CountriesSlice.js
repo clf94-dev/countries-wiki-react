@@ -4,7 +4,7 @@ import {
 
 const DARK_MODE_NAME = 'dark_mode_flag';
 const getInitialDarkMode = () => {
-    const darkModeFlag = localStorage.getItem(DARK_MODE_NAME) || false;
+    const darkModeFlag = localStorage.getItem(DARK_MODE_NAME) === 'true';
     return darkModeFlag;
 }
 
