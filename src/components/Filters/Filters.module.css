@@ -1,0 +1,22 @@
+.filters{
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+.dark{
+    background-color: black;
+}
+.searchBar{
+    width: 250px;
+    height: 40px;
+    background-color: black;
+
+}
+.searchBar .ant-input{
+    background-color: black;
+}
+.currencyFilter, .regionFilter{
+    width: 200px;
+    height: 40px;
+    background-color: black;
+}
