@@ -14,6 +14,10 @@
     border: 1px solid hsl(200, 15%, 8%);
     border-radius: 10px;
     background-color: transparent;
+    display: flex;
+    width: 130px;
+    justify-content: space-between;
+    align-items: center;
     color: hsl(200, 15%, 8%);
     padding: 0 20px;
 }
@@ -22,3 +26,5 @@
     color: white;
     background-color: hsl(200, 15%, 8%);
 }
+
+

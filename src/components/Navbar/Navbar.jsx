@@ -6,7 +6,10 @@ function Navbar(){
                 <h3>Countries Wiki</h3>
             </div>
             <div className={styles.btnSection}>
-                <button className={styles.darkModeBtn}>Dark Mode</button>
+                <button className={styles.darkModeBtn}>
+                    <ion-icon name='moon-outline' size="small"></ion-icon>
+                    <p>Dark Mode</p>
+                </button>
             </div>
         </div>
     )
