@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar'
 import CountriesList from '../../components/CountriesList'
 import Filters from '../../components/Filters'
 
-import {useStore} from '../../store'
+import { useStore } from '../../store'
 
 function Home() {
     const [darkMode, setDarkMode] = useState(false);
