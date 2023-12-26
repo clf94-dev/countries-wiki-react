@@ -6,7 +6,6 @@ import Filters from '../../components/Filters'
 import { useStore } from '../../store'
 
 function Home() {
-    const [darkMode, setDarkMode] = useState(false);
     let firstLoad = true;
 
     const countriesList = useStore((state) => state.countriesList)
@@ -21,9 +20,9 @@ function Home() {
     console.log({countriesList})
     return(
         <div style={{display: 'flex',flexDirection: 'column', justifyContent:'center'}}>
-            <Navbar darkMode={darkMode} setDarkMode={setDarkMode}/>
+            <Navbar />
             <Filters />
-            <CountriesList darkMode={darkMode} />
+            <CountriesList  />
         </div>
     )
 }

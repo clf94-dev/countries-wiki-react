@@ -3,7 +3,7 @@ import styles from './Navbar.module.css'
 
 import { useStore } from '../../store'
 
-function Navbar({darkMode, setDarkMode}){
+function Navbar(){
     const darkModeOn = useStore((state) => state.darkModeOn);
     const activateDarkMode= useStore((state) => state.activateDarkMode);
     const deactivateDarkMode= useStore((state) => state.deactivateDarkMode);
@@ -11,9 +11,8 @@ function Navbar({darkMode, setDarkMode}){
     const handleClickMode = () =>{
         if (darkModeOn) deactivateDarkMode()
         else activateDarkMode()
-        setDarkMode((prev) => !prev)
     }
-    console.log(darkMode, darkModeOn)
+    console.log(darkModeOn)
     return (
         <div className={darkModeOn ? `${styles.navContainer} ${styles.darkContainer}`: styles.navContainer}>
             <div className={styles.title}>
@@ -30,7 +29,6 @@ function Navbar({darkMode, setDarkMode}){
 }
 
 Navbar.propTypes = {
-    darkMode: PropTypes.bool.required,
-    setDarkMode: PropTypes.func.required,
+
 }
 export default Navbar
