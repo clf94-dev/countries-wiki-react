@@ -1,21 +1,13 @@
 import React, { useState } from 'react'
 
 import styles from './CountriesList.module.css'
+import Card from '../Card'
 
 function CountriesList() {
-    const [showCountryName, setShowCountryName] = useState(false)
+
     return(
         <div className={styles.listContainer}>
-            {[1, 2, 3].map(item =>  <div 
-                className={styles.card}
-                onMouseEnter={() => setShowCountryName(true)}
-                onMouseLeave={() => setShowCountryName(false)}
-            >
-                <p className={styles.image}>Image {item}</p>
-                { showCountryName ? <div className={styles.countryOverlay}>
-                    <p className={styles.name}>name</p>
-                </div> : null}
-            </div>)}
+            {[1, 2, 3].map(item =>  <Card data={item} />)}
         </div>
     )
 }
