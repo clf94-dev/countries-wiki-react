@@ -12,6 +12,7 @@ const getInitialDarkMode = () => {
 
 export const countriesSlice = (set) => ({
     countriesList: undefined,
+    countryDetail: undefined,
     filteredCountriesList: undefined,
     regionFilterOptions: undefined,
     regionFilterSelected: undefined,
@@ -56,6 +57,13 @@ export const countriesSlice = (set) => ({
             filteredCountriesList: filteredList
         }
     }),
+    fetchCountryDetail: (data) => {
+        console.log({data})
+        set(() => ({
+            countryDetail: data
+        }))
+
+    },
     fetchCountriesData: async () => {
         const listData = await getCountriesList()
 
