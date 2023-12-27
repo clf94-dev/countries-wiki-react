@@ -10,9 +10,22 @@ const getInitialDarkMode = () => {
 
 export const countriesSlice = (set) => ({
     countriesList: undefined,
+    filteredCountriesList: undefined,
     regionFilterOptions: undefined,
+    regionFilterSelected: undefined,
     currencyFilterOptions: undefined,
+    currencyFilterSelected: undefined,
+    searchFilterValue: undefined,
     darkModeOn: getInitialDarkMode(),
+    updateRegionFilterSelected: (value) => set(() => ({
+        regionFilterSelected: value
+    })),
+    updateCurrencyFilterSelected: (value) => set(() => ({
+        currencyFilterSelected: value
+    })),
+    updateSearchFilterSelected: (value) => set(() => ({
+        searchFilterValue: value
+    })),
     activateDarkMode: () => set(() =>{
         localStorage.setItem(DARK_MODE_NAME, true)
         return {
@@ -23,6 +36,22 @@ export const countriesSlice = (set) => ({
         localStorage.setItem(DARK_MODE_NAME, false)
         return {
             darkModeOn: false
+        }
+    }),
+    filterCountriesListData: () => set((state) =>{
+        const  countriesFullList  = state.countriesList;
+        const regionFilter = state.regionFilterSelected;
+        const currencyFilter = state.currencyFilterSelected;
+        const searchFilter = state.searchFilterValue;
+
+       
+        let filteredList = [];
+        console.log({filteredList, countriesFullList})
+        if (regionFilter) filteredList = countriesFullList.filter(country => country.region === regionFilter.value )
+  
+        console.log('filterValues',{filteredList, regionFilter, currencyFilter, searchFilter})
+        return {
+            filteredCountriesList: filteredList
         }
     }),
     fetchCountriesData: async () => {
@@ -42,8 +71,9 @@ export const countriesSlice = (set) => ({
         }).flat().filter(e => e)
         const noRepeatedCurrenciesList = currencyCodeList.filter((value,index,array)=>array.findIndex(v2=>(v2.value===value.value))===index)
 
-        set((state) => ({
+        set(() => ({
             countriesList: listData.data,
+            filteredCountriesList:listData.data,
             regionFilterOptions: regionFilterValues,
             currencyFilterOptions: noRepeatedCurrenciesList
         }))

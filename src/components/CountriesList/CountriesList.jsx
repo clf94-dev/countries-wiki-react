@@ -8,10 +8,10 @@ import { useStore } from '../../store';
 
 function CountriesList({darkMode}) {
     const darkModeOn = useStore((state) => state.darkModeOn);
-    const countriesList = useStore((state) => state.countriesList)
+    const filteredCountriesList = useStore((state) => state.filteredCountriesList)
     return(
         <div className={darkModeOn ? `${styles.darkListContainer} ${styles.listContainer}` : styles.listContainer}>
-            {countriesList?.length ? countriesList.map(item =>  <Card data={item} />) : null}
+            {filteredCountriesList?.length ? filteredCountriesList.map(item =>  <Card data={item} />) : null}
         </div>
     )
 }
