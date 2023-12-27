@@ -59,7 +59,7 @@ function Filters() {
       }
       const handleChangeSearch = (e)  => {
         console.log({e}, e.target.value)
-        updateSearchFilterSelected(e);
+        updateSearchFilterSelected(e.target.value);
         filterCountriesListData();
       }
     return (

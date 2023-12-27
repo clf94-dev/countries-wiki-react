@@ -2,6 +2,8 @@ import {
     getCountriesList
 } from '../../services/countries'
 
+import { capitalizeString } from '../../utils/funtions'
+
 const DARK_MODE_NAME = 'dark_mode_flag';
 const getInitialDarkMode = () => {
     const darkModeFlag = localStorage.getItem(DARK_MODE_NAME) === 'true';
@@ -44,13 +46,12 @@ export const countriesSlice = (set) => ({
         const currencyFilter = state.currencyFilterSelected;
         const searchFilter = state.searchFilterValue;
 
-       
+       console.log({searchFilter})
         let filteredList = countriesFullList || [];
-        console.log({filteredList, countriesFullList})
-        if (regionFilter) filteredList = filteredList.filter(country => country.region === regionFilter.value )
+        let filteredListTest = []
+       if (regionFilter) filteredList = filteredList.filter(country => country.region === regionFilter.value )
         if (currencyFilter) filteredList = filteredList.filter(country => country.currencies?.hasOwnProperty(currencyFilter.value))
-    
-        console.log('filterValues',{filteredList, regionFilter, currencyFilter, searchFilter})
+        if (searchFilter)  filteredList = filteredList.filter(country => country.name.common.toLowerCase().includes(/* capitalizeString( */searchFilter)/* ) */)
         return {
             filteredCountriesList: filteredList
         }
