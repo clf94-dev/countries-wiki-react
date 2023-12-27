@@ -5,10 +5,14 @@
     height: 230px;
     justify-content: center;
     position: relative;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 }
 .card:hover{
     cursor: pointer;
+}
+.card.dark {
+    box-shadow: none;
 }
 .countryOverlay{
     position: absolute;

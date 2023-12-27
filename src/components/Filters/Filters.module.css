@@ -15,6 +15,11 @@
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+.inputComponent.dark{
+    background-color: #a0a0a0;
+    box-shadow: none;
+
+}
 .inputComponent input{
     font-size: 15px;
 }
@@ -44,6 +49,7 @@
 }
 .searchBar.dark{
     background-color: #a0a0a0;
+    box-shadow: none;
 
 }
 

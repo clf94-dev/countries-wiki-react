@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 
 import styles from './Card.module.css'
 
+import { useStore } from "../../store";
 function Card({ data }) {
+    
+    const darkModeOn = useStore((state) => state.darkModeOn);
     const [showCountryName, setShowCountryName] = useState(false)
     return (
     <div 
-        className={styles.card}
+        className={`${styles.card} ${darkModeOn ? styles.dark : ''}`}
         onMouseEnter={() => setShowCountryName(true)}
         onMouseLeave={() => setShowCountryName(false)}
     >

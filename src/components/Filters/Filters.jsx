@@ -71,7 +71,7 @@ function Filters() {
                 <input 
                   type="text" 
                   placeholder='Search for a country' 
-                  className={styles.searchBar}
+                  className={`${styles.searchBar} ${darkModeOn ? styles.dark : ''}`}
                   onChange={handleChangeSearch}  />
             </div>
             
