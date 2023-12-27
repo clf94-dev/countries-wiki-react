@@ -8,6 +8,8 @@ import {
 import Home from './pages/Home'
 import Country from './pages/Country'
 
+import NotFoundPage from './pages/NotFound'
+
 import './index.css'
 
 const router = createBrowserRouter([
@@ -18,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: '/country',
     element: <Country />
+  },
+  {
+    path: '*',
+    element: <NotFoundPage />
   }
 ])
 
