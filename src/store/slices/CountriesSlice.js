@@ -10,6 +10,7 @@ const getInitialDarkMode = () => {
 
 export const countriesSlice = (set) => ({
     countriesList: undefined,
+    regionFilterOptions: undefined,
     darkModeOn: getInitialDarkMode(),
     activateDarkMode: () => set(() =>{
         localStorage.setItem(DARK_MODE_NAME, true)
@@ -24,8 +25,20 @@ export const countriesSlice = (set) => ({
         }
     }),
     fetchCountriesData: async () => {
-        const  listData = await getCountriesList()
-        console.log({listData})
-        set((state) => ({countriesList: listData.data}))
+        const listData = await getCountriesList()
+
+        const regionsList = listData.data.map(country => country.region)
+        const noRepeatedRegionsList = [...new Set(regionsList)]
+        const regionFilterValues = noRepeatedRegionsList.map(item =>( {value: item, label: item}))
+        console.log({regionsList, noRepeatedRegionsList, regionFilterValues})
+       /*  const currencyList = listData.data.map(country => country?.currencies)
+        console.log({currencyList, listData})
+        const currencyCodeList = currencyList?.map(currency => Object.getOwnPropertyNames(currency))
+        const noRepeatedCurrenciesList = new Set(currencyList)
+        console.log({listData, currencyList, noRepeatedCurrenciesList, currencyCodeList}) */
+        set((state) => ({
+            countriesList: listData.data,
+            regionFilterOptions: regionFilterValues
+        }))
     }
 })

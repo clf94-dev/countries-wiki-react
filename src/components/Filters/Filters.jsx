@@ -12,6 +12,7 @@ function Filters() {
       ]
    
     const darkModeOn = useStore((state) => state.darkModeOn);
+    const regionFilterOptions = useStore((state) => state.regionFilterOptions)
     const customStyles = {
         option: (defaultStyles, state) => ({
           ...defaultStyles,
@@ -52,7 +53,7 @@ function Filters() {
             </div>
             
             <Select placeholder="Select currency" styles={darkModeOn ? customStyles : customStylesLight} options={options} />
-            <Select placeholder="Select region" styles={darkModeOn ? customStyles : customStylesLight} options={options} />
+            <Select placeholder="Select region" styles={darkModeOn ? customStyles : customStylesLight} options={regionFilterOptions} />
     
        </div>
     )
