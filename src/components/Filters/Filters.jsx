@@ -56,10 +56,12 @@ function Filters() {
             
             <Select 
               placeholder="Select currency" 
+              className={styles.currencyFilter}
               styles={darkModeOn ? customStyles : customStylesLight} 
               options={currencyFilterOptions} 
             />
             <Select 
+            className={styles.regionFilter}
               placeholder="Select region" 
               styles={darkModeOn ? customStyles : customStylesLight}
               options={regionFilterOptions} 

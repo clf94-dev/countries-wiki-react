@@ -34,7 +34,7 @@
 
 
 .searchBar{
-    width: 250px;
+    width: 300px;
     height: 40px;
     background-color: white;
     color: #a0a0a0;
@@ -48,7 +48,7 @@
 }
 
 .currencyFilter, .regionFilter{
-    width: 200px;
-    height: 40px;
+    width: 250px;
+
     background-color: black;
 }
