@@ -39,16 +39,17 @@ export const countriesSlice = (set) => ({
         }
     }),
     filterCountriesListData: () => set((state) =>{
-        const  countriesFullList  = state.countriesList;
+        const countriesFullList  = state.countriesList;
         const regionFilter = state.regionFilterSelected;
         const currencyFilter = state.currencyFilterSelected;
         const searchFilter = state.searchFilterValue;
 
        
-        let filteredList = [];
+        let filteredList = countriesFullList || [];
         console.log({filteredList, countriesFullList})
-        if (regionFilter) filteredList = countriesFullList.filter(country => country.region === regionFilter.value )
-  
+        if (regionFilter) filteredList = filteredList.filter(country => country.region === regionFilter.value )
+        if (currencyFilter) filteredList = filteredList.filter(country => country.currencies?.hasOwnProperty(currencyFilter.value))
+    
         console.log('filterValues',{filteredList, regionFilter, currencyFilter, searchFilter})
         return {
             filteredCountriesList: filteredList
