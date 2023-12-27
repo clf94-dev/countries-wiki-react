@@ -40,7 +40,6 @@ function Filters() {
           backgroundColor: "#fff",
           padding: "6px",
           border: "none",
-          boxShadow: "none",
           boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
         }),
         singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#000" }),
