@@ -2,9 +2,23 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: 100%;
     flex-wrap: wrap;
     margin: auto;
 }
 .darkListContainer{
     background-color: black;
+}
+
+.noData {
+    display: flex;
+    width: 100%;
+    height: 88vh;
+    font-size: 30px;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+.noData.dark{
+    color: white;
 }

@@ -11,7 +11,12 @@ function CountriesList({darkMode}) {
     const filteredCountriesList = useStore((state) => state.filteredCountriesList)
     return(
         <div className={darkModeOn ? `${styles.darkListContainer} ${styles.listContainer}` : styles.listContainer}>
-            {filteredCountriesList?.length ? filteredCountriesList.map(item =>  <Card data={item} />) : null}
+            {filteredCountriesList?.length 
+                ? filteredCountriesList.map(item =>  <Card data={item} />) 
+                : <div className={darkModeOn ? `${styles.dark} ${styles.noData}` :styles.noData}> 
+                   <p className={styles.noDataMessage}>No data available</p>
+                </div>
+            }
         </div>
     )
 }
