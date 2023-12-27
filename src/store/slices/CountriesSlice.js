@@ -11,6 +11,7 @@ const getInitialDarkMode = () => {
 export const countriesSlice = (set) => ({
     countriesList: undefined,
     regionFilterOptions: undefined,
+    currencyFilterOptions: undefined,
     darkModeOn: getInitialDarkMode(),
     activateDarkMode: () => set(() =>{
         localStorage.setItem(DARK_MODE_NAME, true)
@@ -30,15 +31,21 @@ export const countriesSlice = (set) => ({
         const regionsList = listData.data.map(country => country.region)
         const noRepeatedRegionsList = [...new Set(regionsList)]
         const regionFilterValues = noRepeatedRegionsList.map(item =>( {value: item, label: item}))
-        console.log({regionsList, noRepeatedRegionsList, regionFilterValues})
-       /*  const currencyList = listData.data.map(country => country?.currencies)
-        console.log({currencyList, listData})
-        const currencyCodeList = currencyList?.map(currency => Object.getOwnPropertyNames(currency))
-        const noRepeatedCurrenciesList = new Set(currencyList)
-        console.log({listData, currencyList, noRepeatedCurrenciesList, currencyCodeList}) */
+
+        const currencyList = listData.data.map(country => country?.currencies)
+        const currencyCodeList = currencyList?.map( currency => {
+            console.log({currency})
+            if(currency) return Object.keys(currency).map(key => {
+                return {value: key, label: `${currency[key].name} (${currency[key].symbol})`}
+            })
+            return undefined
+        }).flat().filter(e => e)
+        const noRepeatedCurrenciesList = currencyCodeList.filter((value,index,array)=>array.findIndex(v2=>(v2.value===value.value))===index)
+
         set((state) => ({
             countriesList: listData.data,
-            regionFilterOptions: regionFilterValues
+            regionFilterOptions: regionFilterValues,
+            currencyFilterOptions: noRepeatedCurrenciesList
         }))
     }
 })

@@ -12,7 +12,9 @@ function Filters() {
       ]
    
     const darkModeOn = useStore((state) => state.darkModeOn);
-    const regionFilterOptions = useStore((state) => state.regionFilterOptions)
+    const regionFilterOptions = useStore((state) => state.regionFilterOptions);
+    const currencyFilterOptions = useStore((state) => state.currencyFilterOptions)
+    console.log({currencyFilterOptions})
     const customStyles = {
         option: (defaultStyles, state) => ({
           ...defaultStyles,
@@ -52,8 +54,16 @@ function Filters() {
                 <input type="text" placeholder='Search for a country' className={styles.searchBar}  />
             </div>
             
-            <Select placeholder="Select currency" styles={darkModeOn ? customStyles : customStylesLight} options={options} />
-            <Select placeholder="Select region" styles={darkModeOn ? customStyles : customStylesLight} options={regionFilterOptions} />
+            <Select 
+              placeholder="Select currency" 
+              styles={darkModeOn ? customStyles : customStylesLight} 
+              options={currencyFilterOptions} 
+            />
+            <Select 
+              placeholder="Select region" 
+              styles={darkModeOn ? customStyles : customStylesLight}
+              options={regionFilterOptions} 
+            />
     
        </div>
     )
