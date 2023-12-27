@@ -26,6 +26,7 @@ function Filters() {
           backgroundColor: "#212529",
           padding: "6px",
           border: "none",
+          borderRadius: "4px",
           boxShadow: "none",
         }),
         singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#fff" }),
@@ -39,9 +40,10 @@ function Filters() {
     
         control: (defaultStyles) => ({
           ...defaultStyles,
-          backgroundColor: "#fff",
           padding: "6px",
-          border: "none",
+          border:'none',
+          borderRadius: "4px",    
+          backgroundColor: "#fff",
           boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
         }),
         singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#000" }),
@@ -81,7 +83,7 @@ function Filters() {
               onChange={handleChangeCurrency}
             />
             <Select 
-            className={styles.regionFilter}
+              className={styles.regionFilter}
               placeholder="Select region" 
               styles={darkModeOn ? customStyles : customStylesLight}
               options={regionFilterOptions} 
