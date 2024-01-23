@@ -1,10 +1,19 @@
 import { useStore } from "../../store"
+import { useNavigate } from "react-router-dom"
 
 function CountryDetail() {
-    const countryDetail = useStore((state) => state.countryDetail)
+    const navigate = useNavigate();
+    const countryDetail = useStore((state) => state.countryDetail);
     console.log({countryDetail})
+
+    const handleBackClick = () =>{
+        navigate('/')
+    }
     return(
         <div>
+            <div>
+                <button onClick={() => handleBackClick()}>Back</button>
+            </div>
             <div>
                 <img src={countryDetail.flags.svg} alt={`${countryDetail.name.common} flag image`} />
             </div>
