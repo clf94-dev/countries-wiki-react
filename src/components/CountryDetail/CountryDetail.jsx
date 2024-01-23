@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom"
 function CountryDetail() {
     const navigate = useNavigate();
     const countryDetail = useStore((state) => state.countryDetail);
+    const resetCountryDetail = useStore((state) => state.resetCountryDetail)
     console.log({countryDetail})
 
     const handleBackClick = () =>{
         navigate('/')
+        resetCountryDetail()
     }
     return(
         <div>

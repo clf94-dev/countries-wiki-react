@@ -64,6 +64,11 @@ export const countriesSlice = (set) => ({
         }))
 
     },
+    resetCountryDetail:  () => {
+        set(() => ({
+            countryDetail: undefined,  
+        }))
+    },
     fetchCountriesData: async () => {
         const listData = await getCountriesList()
 
