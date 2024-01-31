@@ -29,6 +29,11 @@ function Filters() {
           borderRadius: "4px",
           boxShadow: "none",
         }),
+        menuList: (provided) => ({
+          ...provided,
+          paddingTop: 0,
+          paddingBottom: 0,
+       }),
         singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#fff" }),
       };
       const customStylesLight = {
@@ -37,7 +42,11 @@ function Filters() {
           color: state.isSelected ? "#212529" : "#000",
           backgroundColor: state.isSelected ? "#a0a0a0" : "#fffff",
         }),
-    
+        menuList: (provided) => ({
+          ...provided,
+          paddingTop: 0,
+          paddingBottom: 0,
+       }),
         control: (defaultStyles) => ({
           ...defaultStyles,
           padding: "6px",
