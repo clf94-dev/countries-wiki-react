@@ -6,7 +6,7 @@ import Card from '../Card'
 
 import { useStore } from '../../store';
 
-function CountriesList({darkMode}) {
+function CountriesList() {
     const darkModeOn = useStore((state) => state.darkModeOn);
     const filteredCountriesList = useStore((state) => state.filteredCountriesList)
     return(
