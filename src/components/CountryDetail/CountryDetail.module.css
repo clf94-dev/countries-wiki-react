@@ -1,0 +1,92 @@
+
+.detailContainer{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 40px 60px;
+}
+.darkDetailContainer{
+    background-color: black;
+}
+.backRow{
+    display: flex;
+    width: 100%;
+}
+
+.backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    height: 45px;
+    width: 100px;
+    padding: 0 20px;
+    border-radius: 12px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+
+}
+.arrowIcon{
+    font-size: 20px;
+}
+.darkBackButton{
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+}
+
+.countryInfoContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.imageColumn{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    
+}
+
+.countryFlag{
+    width: 100%;
+    object-fit: cover;
+}
+.infoColumn{
+    width: 50%;
+    padding: 40px;
+}
+
+.darkInfoColumn{
+    color: white;
+}
+.detailParagrah{
+    font-size: 18px;
+
+}
+
+.detailTitle{
+    font-size: 20px;
+}
+
+.borders{
+    display: flex;
+    align-items: center;
+}
+.borderItems{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px
+}
+.borderItem{
+    width: fit-content;
+    margin: 5px;
+    padding: 2px 10px;
+    border: 1px solid black;
+}
+.darkBorderItem{
+    border-color: white;
+}
