@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types'
+import { useTranslation } from 'react-i18next';
 import styles from './Navbar.module.css'
 
 import { useStore } from '../../store'
 
 function Navbar(){
+    const { t } = useTranslation();
     const darkModeOn = useStore((state) => state.darkModeOn);
     const activateDarkMode= useStore((state) => state.activateDarkMode);
     const deactivateDarkMode= useStore((state) => state.deactivateDarkMode);
@@ -16,7 +18,7 @@ function Navbar(){
     return (
         <div className={darkModeOn ? `${styles.navContainer} ${styles.darkContainer}`: styles.navContainer}>
             <div className={styles.title}>
-                <h3>Countries Wiki</h3>
+                <h3>{t('title')}</h3>
             </div>
             <div className={styles.btnSection}>
                 <button className={darkModeOn ?  `${styles.darkModeBtn} ${styles.active}` : styles.darkModeBtn} onClick={handleClickMode}>

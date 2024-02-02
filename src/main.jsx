@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import Country from './pages/Country'
 
 import NotFoundPage from './pages/NotFound'
+import './i18n';
 
 import './index.css'
 
