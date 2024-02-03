@@ -18,5 +18,6 @@
       "currency": "Currency",
       "timezone": "Timezone",
       "borders": "Borders"
-    }
+    },
+    "notFoundPageLink" : "Go back to home page"
   }

@@ -18,6 +18,7 @@
       "currency": "Divisa",
       "timezone": "Zona horaria",
       "borders": "Fronteras"
-    }
+    },
+    "notFoundPageLink" : "Volver a la página de inicio"
 }
     
