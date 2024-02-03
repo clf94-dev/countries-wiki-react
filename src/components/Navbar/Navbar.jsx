@@ -43,8 +43,12 @@ function Navbar(){
                 </div>
             <div className={styles.btnSection}>
                 <button className={darkModeOn ?  `${styles.darkModeBtn} ${styles.active}` : styles.darkModeBtn} onClick={handleClickMode}>
-                    {darkModeOn ? <ion-icon name='sunny-outline' size="small"></ion-icon> : <ion-icon name='moon-outline' size="small"></ion-icon>}
-                    <p>Dark Mode</p>
+                    <div className={styles.darkModeIcon} >
+                        {darkModeOn 
+                            ? <ion-icon name='sunny-outline' size="small"></ion-icon>
+                            : <ion-icon name='moon-outline' size="small"></ion-icon>}
+                    </div>
+                    <p>{darkModeOn ? t('lightModeBtn') : t('darkModeBtn')}</p>
                 </button>
             </div>
             </div>

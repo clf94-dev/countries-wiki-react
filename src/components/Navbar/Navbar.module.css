@@ -42,11 +42,14 @@
     border-radius: 10px;
     background-color: transparent;
     display: flex;
-    width: 130px;
+    width: auto;
     justify-content: space-between;
     align-items: center;
     color: hsl(200, 15%, 8%);
     padding: 0 20px;
+}
+.darkModeIcon {
+    margin-right: 5px;
 }
 .active {
     color: white;
