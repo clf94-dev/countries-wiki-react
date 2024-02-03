@@ -4,6 +4,7 @@ import CountriesList from '../../components/CountriesList'
 import Filters from '../../components/Filters'
 
 import { useStore } from '../../store'
+import styles from './Home.module.css'
 
 function Home() {
     let firstLoad = true;
@@ -19,7 +20,7 @@ function Home() {
     }, [true])
     console.log({countriesList})
     return(
-        <div style={{display: 'flex',flexDirection: 'column', justifyContent:'center'}}>
+        <div className={styles.homeContainer}>
             <Navbar />
             <Filters />
             <CountriesList  />

@@ -87,7 +87,7 @@ function Filters() {
             
             <Select 
               placeholder={t('filters.currency')}
-              className={styles.currency}
+              className={styles.currencyFilter}
               styles={darkModeOn ? customStyles : customStylesLight} 
               options={currencyFilterOptions} 
               onChange={handleChangeCurrency}
