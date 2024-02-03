@@ -35,7 +35,15 @@ function CountryDetail() {
                     <p className={styles.detailParagrah}><strong className={styles.detailTitle}>{t('detail.subregion')}</strong>: {countryDetail.subregion}</p>
                     <p className={styles.detailParagrah}><strong className={styles.detailTitle}>{t('detail.capital')}</strong>: {countryDetail.capital[0]}</p>
                     <p className={styles.detailParagrah}><strong className={styles.detailTitle}>{t('detail.currency')}</strong>: {countryDetail.subregion}</p>
-                    <p className={styles.detailParagrah}><strong className={styles.detailTitle}>{t('detail.timezone')}</strong>: {countryDetail.timezones?.map( timezone => timezone)}</p>
+                    <div className={styles.timezones}>
+                        <p>
+                            <strong className={styles.detailTitle}>{t('detail.timezone')}</strong>
+                            : 
+                        </p>
+                        <div className={styles.timezoneItems}>
+                            {countryDetail.timezones?.map( timezone => <div key={uuidv4()} className={darkModeOn ? `${styles.darkTimezoneItem} ${styles.timezoneItem}` :styles.timezoneItem}>{timezone}</div>)}
+                        </div>
+                    </div> 
                     <div className={styles.borders}>
                         <p>
                             <strong className={styles.detailTitle}>{t('detail.borders')}</strong>

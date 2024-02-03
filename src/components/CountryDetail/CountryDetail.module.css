@@ -72,15 +72,26 @@
     font-size: 20px;
 }
 
-.borders{
+.borders, .timezones{
     display: flex;
+    width:100%;
     align-items: center;
 }
-.borderItems{
+.borderItems, .timezoneItems{ 
     display: flex;
     flex-wrap: wrap;
     padding-left: 20px
 }
+.timezoneItem{
+    width: fit-content;
+    margin: 5px;
+    padding: 2px 10px;
+    border: 1px solid black;
+}
+.darkTimezoneItem{
+    border-color: white;
+}
+
 .borderItem{
     width: fit-content;
     margin: 5px;
