@@ -90,3 +90,29 @@
 .darkBorderItem{
     border-color: white;
 }
+
+@media (max-width: 760px){
+    .backRow{
+        padding: 10px ;
+    }
+    .detailContainer{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        padding:10px;
+    }
+    .countryInfoContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .infoColumn{
+        width: auto;
+        padding: 20px;
+    }
+    .imageColumn{
+        width: auto;
+        padding: 20px;
+    }
+}
