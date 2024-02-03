@@ -4,14 +4,25 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom"
 import { v4 as uuidv4 } from 'uuid';
 
+import Map from "../Map";
+
 import styles from './CountryDetail.module.css'
+
 
 function CountryDetail() {
     const navigate = useNavigate();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const countryDetail = useStore((state) => state.countryDetail);
     const darkModeOn = useStore((state) => state.darkModeOn);
     const resetCountryDetail = useStore((state) => state.resetCountryDetail)
+    const apiKey = import.meta.env.VITE_HERE_API_KEY
+    let location = {}
+    const language = i18n.language
+
+    if(countryDetail && countryDetail.latlng ){
+        location.lat = countryDetail.latlng[0]
+        location.lng = countryDetail.latlng[1]
+    }
 
     const handleBackClick = () =>{
         navigate('/')
@@ -23,6 +34,7 @@ function CountryDetail() {
 
     }, [])
     console.log({countryDetail})
+
     return(
         <div className={darkModeOn ? `${styles.darkDetailContainer} ${styles.detailContainer}` : styles.detailContainer}>
             <div className={styles.backRow}>
@@ -63,6 +75,7 @@ function CountryDetail() {
 
                 </div>
             </div>
+            <Map apiKey={apiKey} location={location} language={language} />
         </div>
     )
 }
