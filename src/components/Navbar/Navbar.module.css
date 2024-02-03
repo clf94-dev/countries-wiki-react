@@ -51,6 +51,9 @@
 .darkModeIcon {
     margin-right: 5px;
 }
+.darkModeText{
+    display: block;
+}
 .active {
     color: white;
     border: 1px solid white;
@@ -67,4 +70,39 @@
     background-color:white;
 }
 
+@media (max-width: 760px){
+    .navContainer{
+        padding: 0px 20px;
+    }
+    .title{
+        font-size: 15px;
+    }
+    
+    .darkModeBtn{
+        height: 35px;
+        border-radius: 10px;
+        width: 100%; 
+        padding: 0 15px !important; 
+    }
+    .darkModeIcon {
+        margin-right: 0;
+        width: 100%;
 
+    }
+    .active {
+        color: white;
+        border: 1px solid white;
+    }
+    .darkModeText{
+        display: none;
+    }
+    .languageSelector{
+        display: flex;
+        width: auto;
+        justify-content: space-between;
+    }
+    .languageIcon{
+        width: 30px;
+        padding: 0 10px;
+    }
+}

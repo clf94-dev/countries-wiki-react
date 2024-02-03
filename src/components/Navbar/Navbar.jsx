@@ -48,7 +48,9 @@ function Navbar(){
                             ? <ion-icon name='sunny-outline' size="small"></ion-icon>
                             : <ion-icon name='moon-outline' size="small"></ion-icon>}
                     </div>
-                    <p>{darkModeOn ? t('lightModeBtn') : t('darkModeBtn')}</p>
+                    <div className={styles.darkModeText}>
+                        <p>{darkModeOn ? t('lightModeBtn') : t('darkModeBtn')}</p>
+                    </div>
                 </button>
             </div>
             </div>
