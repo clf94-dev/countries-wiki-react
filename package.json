@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@here/maps-api-for-javascript": "^1.50.0",
     "axios": "^1.6.2",
     "i18next": "^23.8.2",
     "i18next-browser-languagedetector": "^7.2.0",
