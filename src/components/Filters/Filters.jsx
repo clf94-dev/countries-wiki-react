@@ -1,10 +1,11 @@
-
+import { useTranslation } from 'react-i18next';
 import styles from './Filters.module.css';
 import Select from 'react-select'
 
 import { useStore } from '../../store';
 
 function Filters() {
+    const { t } = useTranslation()
 
     const darkModeOn = useStore((state) => state.darkModeOn);
     const regionFilterOptions = useStore((state) => state.regionFilterOptions);
@@ -79,21 +80,21 @@ function Filters() {
                 <ion-icon name='search' size="small" className={styles.searchIcon}></ion-icon>
                 <input 
                   type="text" 
-                  placeholder='Search for a country' 
+                  placeholder={t('filters.search')} 
                   className={`${styles.searchBar} ${darkModeOn ? styles.dark : ''}`}
                   onChange={handleChangeSearch}  />
             </div>
             
             <Select 
-              placeholder="Select currency" 
-              className={styles.currencyFilter}
+              placeholder={t('filters.currency')}
+              className={styles.currency}
               styles={darkModeOn ? customStyles : customStylesLight} 
               options={currencyFilterOptions} 
               onChange={handleChangeCurrency}
             />
             <Select 
               className={styles.regionFilter}
-              placeholder="Select region" 
+              placeholder={t('filters.region')}
               styles={darkModeOn ? customStyles : customStylesLight}
               options={regionFilterOptions} 
               onChange={handleChangeRegion}

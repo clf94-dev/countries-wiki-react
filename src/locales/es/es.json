@@ -1,6 +1,11 @@
 {
     "title": "Wiki paises",
     "darkModeBtn": "Modo oscuro",
-    "lightModeBtn": "Modo claro"
+    "lightModeBtn": "Modo claro",
+    "filters": {
+        "search":"Buscar país",
+        "currency": "Seleccionar divisa",
+        "region": "Seleccionar región" 
+    }
 }
     

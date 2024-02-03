@@ -1,6 +1,10 @@
 {
     "title": "Wiki countries",
     "darkModeBtn": "Dark Mode",
-    "lightModeBtn": "Light mode"
-    
+    "lightModeBtn": "Light mode",
+    "filters": {
+      "search":"Search for a country",
+      "currency": "Select currency",
+      "region": "Select region"
+    }
   }
