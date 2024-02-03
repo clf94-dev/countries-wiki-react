@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+
 import PropTypes from 'prop-types'
+import { v4 as uuidv4 } from 'uuid';
 
 import styles from './CountriesList.module.css'
 import Card from '../Card'
@@ -12,7 +13,7 @@ function CountriesList() {
     return(
         <div className={darkModeOn ? `${styles.darkListContainer} ${styles.listContainer}` : styles.listContainer}>
             {filteredCountriesList?.length 
-                ? filteredCountriesList.map(item =>  <Card data={item} />) 
+                ? filteredCountriesList.map(item =>  <Card key={uuidv4()} data={item} />) 
                 : <div className={darkModeOn ? `${styles.dark} ${styles.noData}` :styles.noData}> 
                    <p className={styles.noDataMessage}>No data available</p>
                 </div>

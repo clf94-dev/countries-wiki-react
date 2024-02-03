@@ -1,6 +1,7 @@
 import { useStore } from "../../store"
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom"
+import { v4 as uuidv4 } from 'uuid';
 
 import styles from './CountryDetail.module.css'
 
@@ -10,7 +11,7 @@ function CountryDetail() {
     const countryDetail = useStore((state) => state.countryDetail);
     const darkModeOn = useStore((state) => state.darkModeOn);
     const resetCountryDetail = useStore((state) => state.resetCountryDetail)
-    
+
     const handleBackClick = () =>{
         navigate('/')
         resetCountryDetail()
@@ -41,7 +42,7 @@ function CountryDetail() {
                             :
                         </p> 
                         <div className={styles.borderItems}>
-                            {countryDetail.borders?.map(border => <div className={darkModeOn ? `${styles.darkBorderItem} ${styles.borderItem}` :styles.borderItem}>{border}</div>)}
+                            {countryDetail.borders?.map(border => <div key={uuidv4()} className={darkModeOn ? `${styles.darkBorderItem} ${styles.borderItem}` :styles.borderItem}>{border}</div>)}
                         </div>
                     </div>
 
