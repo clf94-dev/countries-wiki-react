@@ -6,6 +6,18 @@
         "search":"Buscar país",
         "currency": "Seleccionar divisa",
         "region": "Seleccionar región" 
+    },
+    "detail": {
+      "backBtn": "Volver",
+      "officialName": "Nombre oficial",
+      "countryCode": "Código país",
+      "population": "Nº de habitantes",
+      "region": "Región",
+      "subregion": "Sub región",
+      "capital": "Capital",
+      "currency": "Divisa",
+      "timezone": "Zona horaria",
+      "borders": "Fronteras"
     }
 }
     

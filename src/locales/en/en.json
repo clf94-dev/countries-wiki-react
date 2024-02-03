@@ -6,5 +6,17 @@
       "search":"Search for a country",
       "currency": "Select currency",
       "region": "Select region"
+    },
+    "detail": {
+      "backBtn": "Back",
+      "officialName": "Official name",
+      "countryCode": "Country code",
+      "population": "Population",
+      "region": "Region",
+      "subregion": "Sub region",
+      "capital": "Capital",
+      "currency": "Currency",
+      "timezone": "Timezone",
+      "borders": "Borders"
     }
   }
