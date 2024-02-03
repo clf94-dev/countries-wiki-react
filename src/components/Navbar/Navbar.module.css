@@ -12,7 +12,30 @@
     background-color: black;
     color: white;
 }
+.title{
+    font-size: 30px;
+    width: 100%;
+}
 
+.rightSideItems{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.languageSelector{
+    display: flex;
+    width: 160px;
+    justify-content: space-between;
+}
+.languageIcon{
+    width: 40px
+}
+.btnSection{
+    display: flex;
+}
 .darkModeBtn{
     height: 45px;
     border: 1px solid hsl(200, 15%, 8%);

@@ -29,20 +29,24 @@ function Navbar(){
             <div className={styles.title}>
                 <h3>{t('title')}</h3>
             </div>
+
+            <div className={styles.rightSideItems}>
+                <div className={styles.languageSelector}>
+                    <img className={styles.languageIcon} src={EnglishIcon} alt="english language icon" />
+                    <Switch
+                        onChange={handleChangeLanguage}
+                        checked={languageSelected} 
+                        checkedIcon={false}
+                        uncheckedIcon={false}  
+                    />
+                    <img className={styles.languageIcon} src={SpanishIcon} alt="spanish language icon" />
+                </div>
             <div className={styles.btnSection}>
-            <img src={EnglishIcon} alt="english language icon" />
-            <Switch
-                onChange={handleChangeLanguage}
-                checked={languageSelected} 
-                checkedIcon={false}
-                uncheckedIcon={false}
-               
-            />
-            <img src={SpanishIcon} alt="spanish language icon" />
                 <button className={darkModeOn ?  `${styles.darkModeBtn} ${styles.active}` : styles.darkModeBtn} onClick={handleClickMode}>
                     {darkModeOn ? <ion-icon name='sunny-outline' size="small"></ion-icon> : <ion-icon name='moon-outline' size="small"></ion-icon>}
                     <p>Dark Mode</p>
                 </button>
+            </div>
             </div>
         </div>
     )
